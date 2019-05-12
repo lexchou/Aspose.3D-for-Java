@@ -8,8 +8,6 @@ import java.io.IOException;
 public class CenterInLinearExtrusion {
     public static void run() throws IOException {
         // ExStart:CenterInLinearExtrusion
-        // The path to the documents directory.
-        String MyDir = RunExamples.getDataDir();
         // Initialize the base shape to be extruded
         Shape shape = Shape.fromControlPoints(
                 new Vector3(1, 1, 0),
@@ -36,7 +34,7 @@ public class CenterInLinearExtrusion {
         right.createChildNode(new Box(0.01, 3, 3));
 
         // Save 3D scene
-        scene.save(MyDir + "CenterInLinearExtrusion.obj", FileFormat.WAVEFRONTOBJ);
+        scene.save(RunExamples.getOutputFilePath("CenterInLinearExtrusion.obj"), FileFormat.WAVEFRONTOBJ);
         // ExEnd:CenterInLinearExtrusion
     }
 }

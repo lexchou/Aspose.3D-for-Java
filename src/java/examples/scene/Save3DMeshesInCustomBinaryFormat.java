@@ -9,10 +9,8 @@ import java.util.List;
 public class Save3DMeshesInCustomBinaryFormat {
     public static void run()  throws  Exception{
             // ExStart:Save3DMeshesInCustomBinaryFormat
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
             // load a 3D file
-            Scene scene = new Scene(MyDir + "test.fbx");
+            Scene scene = new Scene(RunExamples.getDataFilePath( "test.fbx"));
 
             /*
             * 3D format demonstration is simple
@@ -42,7 +40,7 @@ public class Save3DMeshesInCustomBinaryFormat {
             */
 
             // open file for writing in binary mode
-            try (DataOutputStream writer = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(MyDir + "Save3DMeshesInCustomBinaryFormat_out"))))
+            try (DataOutputStream writer = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(RunExamples.getOutputFilePath("Save3DMeshesInCustomBinaryFormat_out")))))
             {
                 // visit each descent nodes
                 scene.getRootNode().accept(new NodeVisitor(){

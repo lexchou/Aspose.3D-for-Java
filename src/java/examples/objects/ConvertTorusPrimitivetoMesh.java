@@ -8,12 +8,8 @@ import java.io.IOException;
 public class ConvertTorusPrimitivetoMesh {
 
         public static void run() throws Exception {
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + "test.fbx";
-
             // Load a 3D file
-            Scene scene = new Scene(MyDir);
+            Scene scene = new Scene(RunExamples.getDataFilePath("test.fbx"));
             // Initialize Node class object
             Node cubeNode = new Node("torus");
 
@@ -32,7 +28,7 @@ public class ConvertTorusPrimitivetoMesh {
             scene.getRootNode().addChildNode(cubeNode);
 
             // The path to the documents directory.
-            MyDir = RunExamples.getDataDir() + RunExamples.getOutputFilePath("TorusToMeshScene.fbx");
+            String MyDir = RunExamples.getOutputFilePath("TorusToMeshScene.fbx");
 
             // Save 3D scene in the supported file formats
             scene.save(MyDir, FileFormat.FBX7400ASCII);

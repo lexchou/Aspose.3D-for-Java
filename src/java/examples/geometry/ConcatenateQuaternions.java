@@ -7,9 +7,6 @@ public class ConcatenateQuaternions {
 
         public static void run() throws Exception {
             // ExStart:ConcatenateQuaternions
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-
             Scene scene = new Scene();
 
             Quaternion q1 = Quaternion.fromEulerAngle(Math.PI * 0.5, 0, 0);
@@ -31,7 +28,7 @@ public class ConcatenateQuaternions {
             cylinder = scene.getRootNode().createChildNode("cylinder-q3", new Cylinder(0.1, 1, 2));
             cylinder.getTransform().setRotation(q3);
             cylinder.getTransform().setTranslation(new Vector3(5, 2, 0));
-            MyDir = MyDir + "test_out.fbx";
+            String MyDir = RunExamples.getOutputFilePath("test_out.fbx");
             // Save to file
             scene.save(MyDir, FileFormat.FBX7400ASCII);
             // ExEnd:ConcatenateQuaternions

@@ -26,8 +26,7 @@ public class TransformationToNodeByQuaternion {
             scene.getRootNode().getChildNodes().add(cubeNode);
 
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + RunExamples.getOutputFilePath("TransformationToNode.fbx");
+            String MyDir = RunExamples.getOutputFilePath("TransformationToNode.fbx");
 
             // Save 3D scene in the supported file formats
             scene.save(MyDir, FileFormat.FBX7500ASCII);

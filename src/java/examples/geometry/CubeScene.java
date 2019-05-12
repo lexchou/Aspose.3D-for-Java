@@ -25,11 +25,10 @@ public class CubeScene {
             // Add Node to a scene
             scene.getRootNode().getChildNodes().add(cubeNode);
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + RunExamples.getOutputFilePath("CubeScene.fbx");
+            String MyDir = RunExamples.getOutputFilePath("CubeScene.fbx");
             // Save 3D scene in the supported file formats
             //scene.save(MyDir, FileFormat.FBX7400ASCII);
-            scene.save("C:\\3D\\test35\\BoxScene.fbx", FileFormat.FBX7400ASCII);
+            scene.save(MyDir, FileFormat.FBX7400ASCII);
             // ExEnd:CreateCubeScene
 
             System.out.println("\nCube Scene created successfully.\nFile saved at " + MyDir);

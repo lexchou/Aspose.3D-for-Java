@@ -19,8 +19,6 @@ public class GenerateUV {
 
             public static void run() throws Exception {
             // ExStart:GenerateUV
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
             Scene scene = new Scene();
             //since all primitive entities in Aspose.3D will have builtin UV generation
             //here we manually remove it to assume we have a mesh without UV data
@@ -34,7 +32,7 @@ public class GenerateUV {
             //put it to the scene
             Node node = scene.getRootNode().createChildNode(mesh);
             //then save it
-            scene.save(MyDir + "test.obj", FileFormat.WAVEFRONTOBJ);
+            scene.save(RunExamples.getOutputFilePath("test.obj"), FileFormat.WAVEFRONTOBJ);
             // ExEnd:GenerateUV
         }
     

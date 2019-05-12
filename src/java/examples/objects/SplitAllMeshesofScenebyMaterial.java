@@ -9,17 +9,13 @@ public class SplitAllMeshesofScenebyMaterial {
 
         public static void run() throws Exception {
             // ExStart:SplitAllMeshesofScenebyMaterial
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + "test.fbx";
-
             // Load a 3D file
-            Scene scene = new Scene(MyDir);
+            Scene scene = new Scene(RunExamples.getDataFilePath("test.fbx"));
             // Split all meshes
             PolygonModifier.splitMesh(scene, SplitMeshPolicy.CLONE_DATA);
 
             // Save file
-            MyDir = RunExamples.getDataDir() + RunExamples.getOutputFilePath("test-splitted.fbx");
+            String MyDir = RunExamples.getOutputFilePath("test-splitted.fbx");
             scene.save(MyDir, FileFormat.FBX7500ASCII);
 
             // ExEnd:SplitAllMeshesofScenebyMaterial

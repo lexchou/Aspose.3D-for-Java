@@ -11,8 +11,7 @@ public class CreateEmpty3DDocument {
         public static void run() throws Exception {
             // ExStart:CreateEmpty3DDocument
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + "document.fbx";
+            String MyDir = RunExamples.getOutputFilePath( "document.fbx");
 
             // Create an object of the Scene class
             Scene scene = new Scene();

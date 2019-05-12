@@ -14,8 +14,6 @@ public class Encode3DMeshinGoogleDraco {
 
         public static void run() throws IOException {
             // ExStart:Encode3DMeshinGoogleDraco
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
 
             // Create a sphere
             Sphere sphere = new Sphere();
@@ -24,7 +22,7 @@ public class Encode3DMeshinGoogleDraco {
             opt.setCompressionLevel(DracoCompressionLevel.OPTIMAL);
             byte[] b = FileFormat.DRACO.encode(sphere.toMesh(), opt);
             // Save the raw bytes to file
-            Files.write(Paths.get(MyDir, "SphereMeshtoDRC_Out.drc"), b);
+            Files.write(Paths.get(RunExamples.getOutputFilePath("SphereMeshtoDRC_Out.drc")), b);
             // ExEnd:Encode3DMeshinGoogleDraco
         }
 }

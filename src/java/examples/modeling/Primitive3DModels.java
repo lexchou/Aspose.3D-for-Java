@@ -6,9 +6,6 @@ public class Primitive3DModels {
 
     public static void run() throws Exception {
             // ExStart:Primitive3DModels
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-
             // Initialize a Scene object
             Scene scene = new Scene();
             // Create a Box model
@@ -16,7 +13,7 @@ public class Primitive3DModels {
             // Create a Cylinder model
             scene.getRootNode().createChildNode("cylinder", new Cylinder());
             // Save drawing in the FBX format
-            MyDir = MyDir + RunExamples.getOutputFilePath("test.fbx");
+            String MyDir = RunExamples.getOutputFilePath("test.fbx");
             scene.save(MyDir, FileFormat.FBX7500ASCII);
 
             // ExEnd:Primitive3DModels

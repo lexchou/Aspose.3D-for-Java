@@ -8,8 +8,6 @@ import java.io.IOException;
 public class DirectionInLinearExtrusion {
     public static void run() throws IOException {
         // ExStart:DirectionInLinearExtrusion
-        // The path to the documents directory.
-        String MyDir = RunExamples.getDataDir();
         // Initialize the base shape to be extruded
         Shape shape = Shape.fromControlPoints(
                 new Vector3(1, 1, 0),
@@ -32,7 +30,7 @@ public class DirectionInLinearExtrusion {
         right.createChildNode(new LinearExtrusion(shape, 10) {{ setTwist(360); setSlices(100); setDirection(new Vector3(0.3, 0.2, 1));}});
 
         // Save 3D scene
-        scene.save(MyDir + "DirectionInLinearExtrusion.obj", FileFormat.WAVEFRONTOBJ);
+        scene.save(RunExamples.getOutputFilePath("DirectionInLinearExtrusion.obj"), FileFormat.WAVEFRONTOBJ);
         // ExEnd:DirectionInLinearExtrusion
     }
 }

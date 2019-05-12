@@ -26,7 +26,7 @@ public class ConvertBoxPrimitivetoMesh {
             scene.getRootNode().addChildNode(cubeNode);
 
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir() + RunExamples.getOutputFilePath("BoxToMeshScene.fbx");
+            String MyDir = RunExamples.getOutputFilePath("BoxToMeshScene.fbx");
 
             // Save 3D scene in the supported file formats
             scene.save(MyDir, FileFormat.FBX7400ASCII);

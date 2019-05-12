@@ -152,20 +152,18 @@ public class SaveOptions {
             // Customize the name of the buffer file which defines model
             opt.setBufferFile("mybuf.bin");
             // Save glTF file
-            scene.save(MyDir + "glTFSaveOptions_out.gltf", opt);
+            scene.save(RunExamples.getOutputFilePath("glTFSaveOptions_out.gltf"), opt);
 
             // Save a binary glTF file using KHR_binary_glTF extension
-            scene.save(MyDir + "glTFSaveOptions_out.glb", FileFormat.GLTF__BINARY);
+            scene.save(RunExamples.getOutputFilePath("glTFSaveOptions_out.glb"), FileFormat.GLTF__BINARY);
 
             // Developers may use saving options to create a binary glTF file using KHR_binary_glTF extension
             GLTFSaveOptions opts = new GLTFSaveOptions(FileContentType.BINARY);
-            scene.save(MyDir + "Test_out.glb", opts);
+            scene.save(RunExamples.getOutputFilePath("Test_out.glb"), opts);
             // ExEnd:glTFSaveOptions
         }
         public static void drcSaveOptions() throws Exception {
             // ExStart:DRCSaveOptions
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
             // Initialize Scene object
             Scene scene = new Scene();
             // Create a child node
@@ -184,7 +182,7 @@ public class SaveOptions {
             opts.setCompressionLevel(DracoCompressionLevel.OPTIMAL);
 
             // Save Google Draco (.drc) file
-            scene.save(MyDir + "DRCSaveOptions_out.drc", opts);
+            scene.save(RunExamples.getOutputFilePath("DRCSaveOptions_out.drc"), opts);
             // ExEnd:DRCSaveOptions
         }
         public static void DiscardSavingMaterial() throws Exception {
@@ -200,7 +198,7 @@ public class SaveOptions {
             ObjSaveOptions opt = new ObjSaveOptions();
             opt.setFileSystem(new DummyFileSystem());
             // Save 3D scene
-            scene.save(MyDir + "DiscardSavingMaterial_out.obj", opt);
+            scene.save(RunExamples.getOutputFilePath("DiscardSavingMaterial_out.obj"), opt);
             // ExEnd:DiscardSavingMaterial
         }
         public static void savingDependenciesInLocalDirectory() throws Exception {
@@ -216,7 +214,7 @@ public class SaveOptions {
             ObjSaveOptions opt = new ObjSaveOptions();
             opt.setFileSystem(new LocalFileSystem(MyDir));
             // Save 3D scene
-            scene.save(MyDir + "SavingDependenciesInLocalDirectory_out.obj", opt);
+            scene.save(RunExamples.getOutputFilePath("SavingDependenciesInLocalDirectory_out.obj"), opt);
             // ExEnd:SavingDependenciesInLocalDirectory
         }
         public static void SavingDependenciesInMemoryFileSystem() throws Exception {
@@ -233,10 +231,10 @@ public class SaveOptions {
             MemoryFileSystem mfs = new MemoryFileSystem();
             opt.setFileSystem(mfs);
             // Save 3D scene
-            scene.save(MyDir + "SavingDependenciesInMemoryFileSystem_out.obj", opt);
+            scene.save(RunExamples.getOutputFilePath("SavingDependenciesInMemoryFileSystem_out.obj"), opt);
             // Get the test.mtl file content
-            byte[] mtl = mfs.getFileContent(MyDir + "SavingDependenciesInMemoryFileSystem_out.mtl");
-            Files.write(Paths.get(MyDir, "Material.mtl"), mtl);
+            byte[] mtl = mfs.getFileContent(RunExamples.getOutputFilePath("SavingDependenciesInMemoryFileSystem_out.mtl"));
+            Files.write(Paths.get(RunExamples.getOutputFilePath("Material.mtl")), mtl);
             // ExEnd:SavingDependenciesInMemoryFileSystem
         }
 }

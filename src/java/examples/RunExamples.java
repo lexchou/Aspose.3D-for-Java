@@ -146,6 +146,9 @@ public class RunExamples {
         return file.getAbsolutePath();
     }
 
+    public static String getDataFilePath(String s) {
+        return Paths.get(getDataDir(), s).toString();
+    }
     public static String getOutputFilePath(String s) {
         return Paths.get(getOutputDir(), s).toString();
     }

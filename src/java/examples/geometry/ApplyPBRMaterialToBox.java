@@ -7,8 +7,6 @@ public class ApplyPBRMaterialToBox {
 
         public static void run() throws Exception {
             // ExStart:ApplyPBRMaterialToBox
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
 
             // initialize a scene
             Scene scene = new Scene();
@@ -22,7 +20,7 @@ public class ApplyPBRMaterialToBox {
             Node boxNode = scene.getRootNode().createChildNode("box", new Box());
             boxNode.setMaterial(mat);
             // save 3d scene into STL format
-            scene.save(MyDir + "PBR_Material_Box_Out.stl", FileFormat.STLASCII);
+            scene.save(RunExamples.getOutputFilePath("PBR_Material_Box_Out.stl"), FileFormat.STLASCII);
             // ExEnd:ApplyPBRMaterialToBox
         }
 }

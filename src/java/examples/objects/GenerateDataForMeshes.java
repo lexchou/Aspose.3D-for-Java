@@ -9,11 +9,9 @@ public class GenerateDataForMeshes {
 
         public static void run() throws IOException {
             // ExStart:GenerateDataForMeshes
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
 
             // Load a 3ds file, 3ds file doesn't have normal data, but it has smoothing group
-            Scene s = new Scene(MyDir + "camera.3ds");
+            Scene s = new Scene(RunExamples.getDataFilePath("camera.3ds"));
             // Visit all nodes and create normal data for all meshes
             s.getRootNode().accept(new NodeVisitor() {
                 @Override

@@ -7,8 +7,6 @@ import java.io.IOException;
 public class SlicesInLinearExtrusion {
     public static void run() throws IOException {
         // ExStart:SlicesInLinearExtrusion
-        // The path to the documents directory.
-        String MyDir = RunExamples.getDataDir();
         // Initialize the base shape to be extruded
         Shape shape = Shape.fromControlPoints(
                 new Vector3(1, 1, 0),
@@ -31,7 +29,7 @@ public class SlicesInLinearExtrusion {
         right.createChildNode(new LinearExtrusion(shape, 2) {{setSlices(10);}});
 
         // Save 3D scene
-        scene.save(MyDir + "SlicesInLinearExtrusion.obj", FileFormat.WAVEFRONTOBJ);
+        scene.save(RunExamples.getOutputFilePath("SlicesInLinearExtrusion.obj"), FileFormat.WAVEFRONTOBJ);
         // ExEnd:SlicesInLinearExtrusion
 
     }

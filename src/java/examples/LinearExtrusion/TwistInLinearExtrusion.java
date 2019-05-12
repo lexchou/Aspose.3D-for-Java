@@ -8,8 +8,6 @@ import java.io.IOException;
 public class TwistInLinearExtrusion {
     public static void run() throws IOException {
         // ExStart:TwistInLinearExtrusion
-        // The path to the documents directory.
-        String MyDir = RunExamples.getDataDir();
         // Initialize the base shape to be extruded
         Shape shape = Shape.fromControlPoints(
                 new Vector3(1, 1, 0),
@@ -32,7 +30,7 @@ public class TwistInLinearExtrusion {
         right.createChildNode(new LinearExtrusion(shape, 10) {{ setTwist(90); setSlices(100); }});
 
         // Save 3D scene
-        scene.save(MyDir + "TwistInLinearExtrusion.obj", FileFormat.WAVEFRONTOBJ);
+        scene.save(RunExamples.getOutputFilePath("TwistInLinearExtrusion.obj"), FileFormat.WAVEFRONTOBJ);
         // ExEnd:TwistInLinearExtrusion
     }
 }

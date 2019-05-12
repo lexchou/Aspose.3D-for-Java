@@ -39,8 +39,7 @@ public class MeshGeometryData {
             }
 
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + RunExamples.getOutputFilePath("MeshGeometryData.fbx");
+            String MyDir = RunExamples.getOutputFilePath("MeshGeometryData.fbx");
 
             // Save 3D scene in the supported file formats
             scene.save(MyDir, FileFormat.FBX7400ASCII);

@@ -27,7 +27,7 @@ public class ConvertPlanePrimitivetoMesh {
             scene.getRootNode().addChildNode(cubeNode);
 
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir() + RunExamples.getOutputFilePath("PlaneToMeshScene.fbx");
+            String MyDir = RunExamples.getOutputFilePath("PlaneToMeshScene.fbx");
 
             // Save 3D scene in the supported file formats
             scene.save(MyDir, FileFormat.FBX7400ASCII);

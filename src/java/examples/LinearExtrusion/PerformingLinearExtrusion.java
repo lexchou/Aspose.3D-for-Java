@@ -6,8 +6,6 @@ import examples.RunExamples;
 public class PerformingLinearExtrusion {
     public static void run() throws Exception {
         // ExStart:PerformingLinearExtrusion
-        // The path to the documents directory.
-        String MyDir = RunExamples.getDataDir();
         // Initialize the base shape to be extruded
         Shape shape = Shape.fromControlPoints(
                 new Vector3(1, 1, 0),
@@ -26,7 +24,7 @@ public class PerformingLinearExtrusion {
         // Create a child node by passing extrusion
         scene.getRootNode().createChildNode(extrusion);
         // Save 3D scene
-        scene.save(MyDir +  "LinearExtrusion.obj", FileFormat.WAVEFRONTOBJ);
+        scene.save(RunExamples.getOutputFilePath("LinearExtrusion.obj"), FileFormat.WAVEFRONTOBJ);
         // ExEnd:PerformingLinearExtrusion
     }
 }

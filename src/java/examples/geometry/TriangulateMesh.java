@@ -7,12 +7,9 @@ public class TriangulateMesh {
 
         public static void run() throws Exception {
             // ExStart:TriangulateMesh
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-
             // Initialize scene object
             Scene scene = new Scene();
-            scene.open(MyDir + "document.fbx");
+            scene.open(RunExamples.getDataFilePath( "document.fbx"));
 
             scene.getRootNode().accept(new NodeVisitor() {
 
@@ -29,7 +26,7 @@ public class TriangulateMesh {
                     return true;
                 }
             });
-            MyDir = MyDir + RunExamples.getOutputFilePath("document.fbx");
+            String MyDir = RunExamples.getOutputFilePath("document.fbx");
             scene.save(MyDir, FileFormat.FBX7400ASCII);
             // ExEnd:TriangulateMesh
             System.out.println("\nMesh has been Triangulated.\nFile saved at " + MyDir);

@@ -24,8 +24,7 @@ public class InformationToScene {
             scene.getAssetInfo().setUnitScaleFactor(0.6);
 
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + RunExamples.getOutputFilePath("InformationToScene.fbx");
+            String MyDir = RunExamples.getOutputFilePath("InformationToScene.fbx");
 
             // Save scene to 3D supported file formats
             scene.save(MyDir, FileFormat.FBX7500ASCII);

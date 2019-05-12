@@ -31,8 +31,7 @@ public class NodeHierarchy {
             top.getTransform().setRotation(Quaternion.fromEulerAngle(Math.PI, 4, 0));
 
             // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
-            MyDir = MyDir + RunExamples.getOutputFilePath("NodeHierarchy.fbx");
+            String MyDir = RunExamples.getOutputFilePath("NodeHierarchy.fbx");
 
             // Save 3D scene in the supported file formats
             scene.save(MyDir, FileFormat.FBX7500ASCII);

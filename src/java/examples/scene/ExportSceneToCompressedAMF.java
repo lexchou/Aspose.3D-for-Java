@@ -15,8 +15,6 @@ import examples.RunExamples;
 public class ExportSceneToCompressedAMF {
             public static void run() throws Exception {
             // ExStart:CompressedAMF
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
             Scene scene = new Scene();
             Box box = new Box();
             Transform tr = scene.getRootNode().createChildNode(box).getTransform();
@@ -30,7 +28,7 @@ public class ExportSceneToCompressedAMF {
             scene.getRootNode().createChildNode().createChildNode(box);
             AMFSaveOptions opt = new AMFSaveOptions();
             opt.setEnableCompression(false);
-            scene.save(MyDir + "test.amf", opt);
+            scene.save(RunExamples.getOutputFilePath("test.amf"), opt);
             // ExEnd:CompressedAMF
         }
     

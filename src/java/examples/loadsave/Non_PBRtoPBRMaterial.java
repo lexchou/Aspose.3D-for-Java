@@ -7,8 +7,6 @@ public class Non_PBRtoPBRMaterial {
 
         public static void run() throws Exception {
             // ExStart:Non_PBRtoPBRMaterial
-            // The path to the documents directory.
-            String MyDir = RunExamples.getDataDir();
             /* initialize a new 3D scene */
             Scene s = new Scene();
             Box box = new Box();
@@ -28,7 +26,7 @@ public class Non_PBRtoPBRMaterial {
                 }
             });
             // save in GLTF 2.0 format
-            s.save(MyDir + "Non_PBRtoPBRMaterial_Out.gltf", opt);
+            s.save(RunExamples.getOutputFilePath("Non_PBRtoPBRMaterial_Out.gltf"), opt);
             // ExEnd:Non_PBRtoPBRMaterial
         }
 }
